@@ -14,13 +14,14 @@ const projects = [
   {
     name: "Kasa",
     description:
-      "Implémenter le front end de Kasa, une application de location de Logements avec React.",
+      "Implémenter le front end de Kasa, une application de location de Logements avec React et Sass",
     image: "/images/kasa.png",
     github: "https://github.com/Kitine23/kasa",
   },
   {
     name: "Mon vieux Grimoire",
-    description: "Développez le back-end d'un site de notation de livres",
+    description:
+      "Développement du back-end d'un site de notation de livres avec Express et MongoDB",
     image: "/images/mon-vieux-grimoire.png",
     github: "https://github.com/Kitine23/mon-vieux-grimoire",
   },
