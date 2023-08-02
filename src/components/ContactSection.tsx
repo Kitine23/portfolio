@@ -1,6 +1,10 @@
+"use client"
+import useContactFrom from "@/hooks/useContactForm"
 import { IconSend } from "@tabler/icons-react"
 
 function ContactSection() {
+  const { register, handleSubmit, onSubmit, errors } = useContactFrom()
+
   return (
     <section id="contact" className="py-10 lg:py-16">
       <div className="px-4 mx-auto max-w-screen-md">
@@ -13,7 +17,7 @@ function ContactSection() {
           <br />
           Je vous répond au plus vite 😊
         </p>
-        <form action="#" className="space-y-8">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
           <div>
             <label
               htmlFor="email"
@@ -23,11 +27,13 @@ function ContactSection() {
             </label>
             <input
               type="email"
-              id="email"
               className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500 dark:shadow-sm-light"
               placeholder="Adresse e-mail"
-              required
+              {...register("email", { required: true })}
             />
+            {errors.email && (
+              <p className="text-red-600 p-2 text-sm">{errors.email.message}</p>
+            )}
           </div>
           <div>
             <label
@@ -38,11 +44,15 @@ function ContactSection() {
             </label>
             <input
               type="text"
-              id="subject"
               className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500 dark:shadow-sm-light"
               placeholder="Sujet"
-              required
+              {...register("subject", { required: true })}
             />
+            {errors.subject && (
+              <p className="text-red-600 p-2 text-sm">
+                {errors.subject.message}
+              </p>
+            )}
           </div>
           <div className="sm:col-span-2">
             <label
@@ -52,11 +62,16 @@ function ContactSection() {
               Message
             </label>
             <textarea
-              id="message"
               rows={6}
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500"
               placeholder="Votre message"
+              {...register("message", { required: true })}
             ></textarea>
+            {errors.message && (
+              <p className="text-red-600 p-2 text-sm">
+                {errors.message.message}
+              </p>
+            )}
           </div>
           <button
             type="submit"
