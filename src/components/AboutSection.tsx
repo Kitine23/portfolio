@@ -1,9 +1,4 @@
-const skills = [
-  { tech: "HTML" },
-  { tech: "CSS" },
-  { tech: "JavaScript" },
-  { tech: "React" },
-]
+import skills from "@/data/skills"
 
 const AboutSection = () => {
   return (
@@ -16,13 +11,18 @@ const AboutSection = () => {
             <h3 className="text-center text-2xl font-bold mb-6 md:text-left">
               Mon parcours
             </h3>
-            <p>
-              Je suis{" "}
-              <span className="font-bold text-teal-500">
-                développeuse web junior
-              </span>{" "}
-              depuis 2023 après avoir suivi une formation Développeur web
-              Fullstack avec OpenClassrooms
+            <p className="[&>b]:font-bold [&>b]:text-teal-500">
+              Je suis <b>développeuse web junior</b> depuis 2023 après avoir
+              suivi une formation Développeur web <b>Fullstack</b> avec{" "}
+              <a
+                href="https://openclassrooms.com/fr/"
+                className="cursor-pointer underline"
+              >
+                OpenClassrooms
+              </a>
+              . Je suis à la recherche de missions qui me permettront de{" "}
+              <b>gagner en expérience</b> et d&apos;utiliser ma maîtrise de
+              technologies incontournables au profit de mes clients.
             </p>
             <br />
           </div>
@@ -30,15 +30,25 @@ const AboutSection = () => {
             <h1 className="text-center text-2xl font-bold mb-6 md:text-left">
               Mes compétences
             </h1>
-            <div className="flex flex-wrap felx-row justify-center md:justify-start">
-              {skills.map((skill) => (
-                <p
-                  key={skill.tech}
-                  className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold"
-                >
-                  {skill.tech}
-                </p>
-              ))}
+            <div className="space-y-2">
+              {skills
+                .sort((a, b) => (a.progression < b.progression ? 1 : -1))
+                .map((skill) => (
+                  <div
+                    key={skill.tech}
+                    className="bg-gray-200 rounded font-semibold relative h-10"
+                  >
+                    <div
+                      style={{ width: `${skill.progression}%` }}
+                      className={`${skill.color} absolute inset-0 h-full`}
+                      aria-hidden="true"
+                    ></div>
+                    <div className="px-4 py-2 flex z-10 absolute gap-2 items-center h-full">
+                      {skill.icon}
+                      <span className="whitespace-nowrap">{skill.tech}</span>
+                    </div>
+                  </div>
+                ))}
             </div>
           </div>
         </div>

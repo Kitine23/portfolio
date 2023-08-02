@@ -1,5 +1,4 @@
 "use client"
-import React from "react"
 import Image from "next/image"
 import { IconArrowDown } from "@tabler/icons-react"
 
@@ -9,9 +8,9 @@ const HeroSection = () => {
       <div className="flex flex-col text-center items-center justify-center py-10 sm:py-16 md:flex-row md:space-x-4 md:text-left md:py-32">
         <div className="md:w-1/2 md:mt-2">
           <Image
-            className="rounded-full shadow-2xl"
+            className="rounded-full"
             src="/avatar.png"
-            alt=""
+            alt="avatar Christine Gueffier"
             width={300}
             height={300}
           />

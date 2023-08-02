@@ -1,31 +1,7 @@
 import { IconBrandGithub, IconExternalLink } from "@tabler/icons-react"
 import Image from "next/image"
 import SlideUp from "./SlideUp"
-
-const projects = [
-  {
-    name: "Booki",
-    description:
-      "Intégrer la page web de Booki, une plateforme de réservation de vacances avec HTML5 et CSS3",
-    image: "/images/booki.png",
-    github: "https://github.com/Kitine23/booki-oc",
-    link: "https://kitine23.github.io/booki-oc/",
-  },
-  {
-    name: "Kasa",
-    description:
-      "Implémenter le front end de Kasa, une application de location de Logements avec React et Sass",
-    image: "/images/kasa.png",
-    github: "https://github.com/Kitine23/kasa",
-  },
-  {
-    name: "Mon vieux Grimoire",
-    description:
-      "Développement du back-end d'un site de notation de livres avec Express et MongoDB",
-    image: "/images/mon-vieux-grimoire.png",
-    github: "https://github.com/Kitine23/mon-vieux-grimoire",
-  },
-]
+import projects from "@/data/projects"
 
 const ProjectsSection = () => {
   return (
@@ -40,7 +16,6 @@ const ProjectsSection = () => {
             <SlideUp offset="-300px 0px -300px 0px">
               <div className="flex flex-col animate-slideUpCubicBezier animation-delay-2 md:flex-row md:space-x-12">
                 <div className="mt-8 md:w-1/2">
-                  <a href={project.link} target="_blank"></a>
                   <Image
                     src={project.image}
                     alt=""
