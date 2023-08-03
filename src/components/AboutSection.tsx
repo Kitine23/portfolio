@@ -7,7 +7,7 @@ const AboutSection = () => {
         <h2 className="text-center font-bold text-5xl">À propos</h2>
         <hr className="w-6 h-1 mx-auto mt-4 mb-10 bg-teal-500 border-0 rounded" />
         <div className="flex flex-col space-y-10 items-stretch justify-center align-top md:flex-row md:text-left md:p-4 md:space-y-0 md:space-x-10">
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 space-y-4">
             <h3 className="text-center text-2xl font-bold mb-6 md:text-left">
               Mon parcours
             </h3>
@@ -24,7 +24,17 @@ const AboutSection = () => {
               <b>gagner en expérience</b> et d&apos;utiliser ma maîtrise de
               technologies incontournables au profit de mes clients.
             </p>
-            <br />
+            <p>
+              Après avoir passé 5 ans à m&apos;occuper d&apos;enfants en
+              situation d&apos;handicap, j&apos;ai pu développé des qualités
+              comme la <b>persévérance</b>, la <b>capacité d&apos;adaptation</b>
+              , l&apos;
+              <b>esprit d&apos;équipe</b>, l&apos;<b>autonomie </b>
+              et la <b>rigueur</b>. C&apos;est en 2022 que j&apos;ai lancé mon
+              projet de reconversion professionnelle dans le développement web.
+              Je suis intéressée par le développement front-end et le web design
+              depuis la fin de ma formation.
+            </p>
           </div>
           <div className="md:w-1/2">
             <h1 className="text-center text-2xl font-bold mb-6 md:text-left">
