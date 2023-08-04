@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
@@ -11,15 +12,20 @@ const validation = z.object({
 type ValidationSchema = z.infer<typeof validation>
 
 const useContactFrom = () => {
+  const [sent, setSent] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const {
+    reset,
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm<ValidationSchema>({
     resolver: zodResolver(validation),
   })
 
   const onSubmit = async (data: ValidationSchema) => {
+    setIsLoading(true)
     const response = await fetch("/api/emails", {
       method: "POST",
       headers: {
@@ -27,9 +33,26 @@ const useContactFrom = () => {
       },
       body: JSON.stringify(data),
     })
+    setIsLoading(false)
+
+    if (!response.ok) {
+      setError("root", {
+        message:
+          response.status === 422 ? "Champs invalides." : "Erreur du serveur.",
+      })
+      return
+    }
 
     const result = await response.json()
-    console.log(result)
+
+    if (result?.error) {
+      setError("root", { message: "Erreur du serveur." })
+      setIsLoading(false)
+      return
+    }
+
+    setSent(true)
+    reset()
   }
 
   return {
@@ -37,6 +60,8 @@ const useContactFrom = () => {
     handleSubmit,
     errors,
     onSubmit,
+    sent,
+    isLoading,
   }
 }
 

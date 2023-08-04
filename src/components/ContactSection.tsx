@@ -1,9 +1,10 @@
 "use client"
 import useContactFrom from "@/hooks/useContactForm"
-import { IconSend } from "@tabler/icons-react"
+import { IconLoader, IconSend } from "@tabler/icons-react"
 
 function ContactSection() {
-  const { register, handleSubmit, onSubmit, errors } = useContactFrom()
+  const { register, handleSubmit, onSubmit, errors, sent, isLoading } =
+    useContactFrom()
 
   return (
     <section id="contact" className="py-10 lg:py-16">
@@ -18,6 +19,11 @@ function ContactSection() {
           Je vous répond au plus vite 😊
         </p>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+          {sent && (
+            <p className="text-green-700 text-center w-full">
+              Votre demande de contact a bien été envoyée.
+            </p>
+          )}
           <div>
             <label
               htmlFor="email"
@@ -77,7 +83,8 @@ function ContactSection() {
             type="submit"
             className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-teal-700 sm:w-fit hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800 flex gap-2 items-center"
           >
-            <IconSend /> Envoyer
+            {isLoading ? <IconLoader className="animate-spin" /> : <IconSend />}
+            Envoyer
           </button>
         </form>
       </div>

@@ -32,10 +32,16 @@ export const POST = async (req: Request) => {
     `,
   }
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) console.log(error)
-    else console.log("Email sent: " + info.response)
-  })
+  try {
+    const result = await transporter.sendMail(mailOptions)
+    console.log("Email sent: " + result.response)
 
-  return NextResponse.json({ message: "email sent" })
+    return NextResponse.json({ message: "email sent" })
+  } catch (error) {
+    console.log("Email sent: " + error)
+    return NextResponse.json(
+      { error: true, message: "email not sent" },
+      { status: 500 }
+    )
+  }
 }
