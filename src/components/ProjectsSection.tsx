@@ -34,11 +34,16 @@ const ProjectsSection = () => {
                       href={project.github}
                       target="_blank"
                       className="cursor-pointer"
+                      aria-label="logo github"
                     >
                       <IconBrandGithub size={32} />
                     </a>
                     {project?.link && (
-                      <a href={project.link} target="_blank">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        aria-label="logo github"
+                      >
                         <IconExternalLink
                           size={32}
                           className="hover:-translate-y-1 transition-transform cursor-pointer"

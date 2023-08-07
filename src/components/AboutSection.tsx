@@ -11,7 +11,7 @@ const AboutSection = () => {
             <h3 className="text-center text-2xl font-bold mb-6 md:text-left">
               Mon parcours
             </h3>
-            <p className="[&>b]:font-bold [&>b]:text-teal-500">
+            <p className="[&>b]:font-bold [&>b]:text-teal-700">
               Je suis <b>développeuse web junior</b> depuis 2023 après avoir
               suivi une formation Développeur web <b>Fullstack</b> avec{" "}
               <a

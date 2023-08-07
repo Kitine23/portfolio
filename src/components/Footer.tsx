@@ -14,6 +14,7 @@ const Footer = () => {
             rel="noreferer"
             target="_blank"
             className="hover:-translate-y-1 transition-transform cursor-pointer"
+            aria-label="lien github"
           >
             <IconBrandGithub size={32} />
           </a>
@@ -22,6 +23,7 @@ const Footer = () => {
             rel="noreferer"
             target="_blank"
             className="hover:-translate-y-1 transition-transform cursor-pointer"
+            aria-label="lien linkedin"
           >
             <IconBrandLinkedin size={32} />
           </a>

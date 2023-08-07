@@ -21,19 +21,19 @@ const HeroSection = () => {
             <br />
             je suis Christine Gueffier!
           </h1>
-          <p className="text-xl mt-4 mb-6 text-teal-600 font-semibold">
+          <p className="text-xl mt-4 mb-6 text-teal-700 font-semibold">
             Développeuse web junior
           </p>
           <a
             href="#projects"
-            className="text-neutral-100 font font-semibold px-6 py-3 bg-teal-600"
+            className="text-neutral-100 font font-semibold px-6 py-3 bg-teal-700"
           >
             Mes projets
           </a>
         </div>
       </div>
       <div className="flex flex-row justify-center">
-        <a href="#about">
+        <a href="#about" aria-label="voir section à propos">
           <IconArrowDown size={35} className="animate-bounce" />
         </a>
       </div>
