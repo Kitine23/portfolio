@@ -16,6 +16,12 @@ const projects: Project[] = [
     link: "https://kitine23.github.io/booki-oc/",
   },
   {
+    name: "Nina Carducci",
+    description: "Débugger et optimiser le SEO d'un site de photographe",
+    image: "/images/nina-carducci.png",
+    github: "https://github.com/Kitine23/nina-carducci.github.io",
+  },
+  {
     name: "Kasa",
     description:
       "Implémenter le front end de Kasa, une application de location de Logements avec React et Sass",
