@@ -4,7 +4,7 @@ import { IconArrowDown } from "@tabler/icons-react"
 
 const HeroSection = () => {
   return (
-    <section id="home" className="py-16 md:py-10">
+    <section id="hero" className="py-16 md:py-10">
       <div className="flex flex-col text-center items-center justify-center py-10 sm:py-16 md:flex-row md:space-x-4 md:text-left md:py-32">
         <div className="md:w-1/2 md:mt-2">
           <Image

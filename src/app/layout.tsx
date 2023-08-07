@@ -11,6 +11,18 @@ export const metadata: Metadata = {
   title: "Christine Gueffier - Portfolio",
   description:
     "Portfolio de Christine Gueffier, Développeur web junior, certification OpenClassrooms",
+  twitter: {
+    title: "Christine Gueffier - Portfolio",
+    description:
+      "Portfolio de Christine Gueffier, Développeur web junior, certification OpenClassrooms",
+    images: ["/images/cover.jpg"],
+  },
+  openGraph: {
+    title: "Christine Gueffier - Portfolio",
+    description:
+      "Portfolio de Christine Gueffier, Développeur web junior, certification OpenClassrooms",
+    images: ["/images/cover.jpg"],
+  },
 }
 
 export default function RootLayout({

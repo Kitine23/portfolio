@@ -5,11 +5,15 @@ import ContactSection from "@/components/ContactSection"
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl">
+    <main className="">
       <HeroSection />
-      <AboutSection />
+      <div className="bg-slate-50">
+        <AboutSection />
+      </div>
       <ProjectsSection />
-      <ContactSection />
+      <div className="bg-neutral-50">
+        <ContactSection />
+      </div>
     </main>
   )
 }
