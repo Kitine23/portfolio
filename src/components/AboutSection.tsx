@@ -1,4 +1,5 @@
 import skills from "@/data/skills"
+import Skill from "./Skill"
 
 const AboutSection = () => {
   return (
@@ -61,20 +62,7 @@ const AboutSection = () => {
               {skills
                 .sort((a, b) => (a.progression < b.progression ? 1 : -1))
                 .map((skill) => (
-                  <div
-                    key={skill.tech}
-                    className="bg-gray-200 rounded font-semibold relative h-10"
-                  >
-                    <div
-                      style={{ width: `${skill.progression}%` }}
-                      className={`${skill.color} absolute inset-0 h-full`}
-                      aria-hidden="true"
-                    ></div>
-                    <div className="px-4 py-2 flex z-10 absolute gap-2 items-center h-full">
-                      {skill.icon}
-                      <span className="whitespace-nowrap">{skill.tech}</span>
-                    </div>
-                  </div>
+                  <Skill key={skill.tech} skill={skill} />
                 ))}
             </div>
           </div>

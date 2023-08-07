@@ -16,7 +16,7 @@ import {
 import colors from "tailwindcss/colors"
 type TailwindColor = keyof typeof colors
 
-type Skill = {
+export type Skill = {
   tech: string
   progression: number
   color: `bg-${TailwindColor}-${number}`
