@@ -8,6 +8,14 @@ const validation = z.object({
   message: z.string().min(1),
 })
 
+/**
+ * Cette fonction gère une requête POST en validant le corps de la requête, en envoyant un e-mail avec les données analysées et en renvoyant une réponse indiquant si l'e-mail a été envoyé avec succès ou non.
+ * @param {Request} req - Le paramètre `req` est un objet représentant la requête HTTP reçue par le serveur.
+ * @returns Le code renvoie une réponse JSON.
+ * - Si la validation échoue, elle renvoie un objet JSON un code d'état de 422.
+ * - Si l'e-mail est envoyé, elle renvoie un message de succès.
+ * - S'il y a une erreur lors de l'envoi, il renvoie un message d'erreur
+ */
 export const POST = async (req: Request) => {
   const body = await req.json()
   const parsedData = validation.safeParse(body)

@@ -1,6 +1,11 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
+  "description": "Portfolio web app to show up my skills",
+  "author": {
+    "name": "Christine Gueffier",
+    "email": "duong.christine23@gmail.com"
+  },
   "private": true,
   "type": "module",
   "scripts": {

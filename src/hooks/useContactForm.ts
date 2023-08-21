@@ -25,7 +25,7 @@ const useContactFrom = () => {
   })
 
   const onSubmit = async (data: ValidationSchema) => {
-    setIsLoading(true)
+    setIsLoading(true) // state pour afficher un indicateur de chargement
     const response = await fetch("/api/emails", {
       method: "POST",
       headers: {
@@ -47,12 +47,11 @@ const useContactFrom = () => {
 
     if (result?.error) {
       setError("root", { message: "Erreur du serveur." })
-      setIsLoading(false)
       return
     }
 
     setSent(true)
-    reset()
+    reset() // vide les champs du formulaire
   }
 
   return {
